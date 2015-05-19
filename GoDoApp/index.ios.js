@@ -1,30 +1,45 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
-
 var React = require('react-native');
 var {
   AppRegistry,
   StyleSheet,
   Text,
   View,
+  TouchableHighlight
 } = React;
 
+var FacebookLoginManager = require('NativeModules').FacebookLoginManager;
+
 var GoDoApp = React.createClass({
-  render: function() {
+  getInitialState() {
+    return {
+      result: '...'
+    }
+  },
+
+  componentDidMount() {
+    var self = this;
+  },
+
+  login() {
+    FacebookLoginManager.newSession((error, info) => {
+      if (error) {
+        this.setState({result: error});
+      } else {
+        this.setState({result: info});
+      }
+    });
+  },
+
+  render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
+        <TouchableHighlight onPress={this.login}>
+          <Text style={styles.welcome}>
+            Facebook Login
+          </Text>
+        </TouchableHighlight>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          {this.state.result}
         </Text>
       </View>
     );
