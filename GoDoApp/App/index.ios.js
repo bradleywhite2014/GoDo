@@ -1,68 +1,56 @@
+'use strict';
+
 var React = require('react-native');
 var {
   AppRegistry,
-  StyleSheet,
-  Text,
+  Navigator,
   View,
-  TouchableHighlight
+  Stylesheet,
 } = React;
 
-var FacebookLoginManager = require('NativeModules').FacebookLoginManager;
+var LocalStorage = require('./Stores/LocalStorage');
+var UserStore = require('./Stores/UserStore');
+var UserInfoScreen = require('./Screens/UserInfoScreen');
+var LoginScreen = require('./Screens/LoginScreen');
 
 var GoDoApp = React.createClass({
   getInitialState() {
-    return {
-      result: '...'
+    return {bootstrapped: false}
+  },
+
+  componentWillMount() {
+    LocalStorage.bootstrap(() => this.setState({bootstrapped: true}));
+  },
+
+  renderScene(route, nav) {
+    switch (route.id) {
+      case 'authenticate':
+        return <LoginScreen navigator={nav} />;
+      case 'user-info':
+        return <UserInfoScreen navigator={nav} />;
+      default:
+        return <View />;
     }
   },
 
-  componentDidMount() {
-    var self = this;
-  },
-
-  login() {
-    FacebookLoginManager.newSession((error, info) => {
-      if (error) {
-        this.setState({result: error});
-      } else {
-        this.setState({result: info});
-      }
-    });
-  },
-
   render() {
+    if (this.state.bootstrapped === false) {
+      return <View />
+    }
+
     return (
-      <View style={styles.container}>
-        <TouchableHighlight onPress={this.login}>
-          <Text style={styles.welcome}>
-            Facebook Login
-          </Text>
-        </TouchableHighlight>
-        <Text style={styles.instructions}>
-          {this.state.result}
-        </Text>
-      </View>
+      <Navigator
+        initialRoute={{ id: 'authenticate', }}
+        renderScene={this.renderScene}
+        configureScene={(route) => {
+          if (route.sceneConfig) {
+            return route.sceneConfig;
+          }
+
+          return Navigator.SceneConfigs.FloatFromRight;
+        }} />
     );
   }
-});
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+})
 
 AppRegistry.registerComponent('GoDoApp', () => GoDoApp);

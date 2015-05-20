@@ -1,5 +1,5 @@
 var dispatcher = require('../AppDispatcher');
-var { dispatch, handleResponse } = require('flux').apiHelpersFor(dispatcher);
+var { dispatch, handleResponse } = require('flux-util').apiHelpersFor(dispatcher);
 var ApiConstants = require('../Constants/ApiConstants');
 var UserConstants = require('../Constants/UserConstants');
 

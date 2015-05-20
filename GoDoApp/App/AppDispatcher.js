@@ -1,1 +1,1 @@
-module.exports = require('flux').createDispatcher();
+module.exports = require('flux-util').createDispatcher();

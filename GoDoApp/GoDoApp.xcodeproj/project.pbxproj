@@ -23,6 +23,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		E44B7F291B0C1F8600BB8F69 /* background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E44B7F281B0C1F8600BB8F69 /* background.mp4 */; };
 		E455C37E1B0AC50900AB9E49 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E455C37A1B0AC50900AB9E49 /* Bolts.framework */; };
 		E455C37F1B0AC50900AB9E49 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E455C37B1B0AC50900AB9E49 /* FBSDKCoreKit.framework */; };
 		E455C3801B0AC50900AB9E49 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E455C37C1B0AC50900AB9E49 /* FBSDKLoginKit.framework */; };
@@ -131,6 +132,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		E44B7F281B0C1F8600BB8F69 /* background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = background.mp4; path = "../../../../Downloads/react-native-login-master 2/background.mp4"; sourceTree = "<group>"; };
 		E455C37A1B0AC50900AB9E49 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		E455C37B1B0AC50900AB9E49 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E455C37C1B0AC50900AB9E49 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		13B07FAE1A68108700A75B9A /* GoDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				E44B7F281B0C1F8600BB8F69 /* background.mp4 */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E455C3B51B0AC70D00AB9E49 /* Info.plist in Resources */,
+				E44B7F291B0C1F8600BB8F69 /* background.mp4 in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
