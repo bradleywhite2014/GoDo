@@ -18,6 +18,10 @@ var styles = require('./Styles');
 var UserInfoScreen = React.createClass({
   mixins: [UserStoreSync],
 
+  GoDo(){
+    this.props.navigator.replace({id: 'goDo-home'});
+  },
+
   afterUpdateUserFromStore() {
     var user = UserStore.getState();
 
@@ -41,6 +45,9 @@ var UserInfoScreen = React.createClass({
           <TouchableOpacity onPress={UserActions.signOut}>
             <Text>Sign out</Text>
           </TouchableOpacity>
+          <Text style={styles.name} onPress={this.GoDo}>
+            Continue
+          </Text>
         </View>
       </View>
     )

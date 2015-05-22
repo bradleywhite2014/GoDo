@@ -12,6 +12,8 @@ var LocalStorage = require('./Stores/LocalStorage');
 var UserStore = require('./Stores/UserStore');
 var UserInfoScreen = require('./Screens/UserInfoScreen');
 var LoginScreen = require('./Screens/LoginScreen');
+var GoDoHomeScreen = require('./Screens/GoDoHomeScreen');
+var DonateTime = require('./Screens/DonateTime');
 
 var GoDoApp = React.createClass({
   getInitialState() {
@@ -28,6 +30,10 @@ var GoDoApp = React.createClass({
         return <LoginScreen navigator={nav} />;
       case 'user-info':
         return <UserInfoScreen navigator={nav} />;
+      case 'goDo-home':
+        return <GoDoHomeScreen navigator={nav} />;
+      case 'time-home':
+        return <DonateTime navigator={nav} />;
       default:
         return <View />;
     }
