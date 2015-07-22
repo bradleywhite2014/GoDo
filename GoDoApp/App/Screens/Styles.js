@@ -49,6 +49,14 @@ module.exports = StyleSheet.create({
     margin: 10,
     opacity: 0.8,
   },
+  goDonate: {
+    fontSize: 20,
+    fontFamily: 'Gill Sans',
+    textAlign: 'auto',
+    color: '#000000',
+    margin: 10,
+    opacity: 0.8,
+  },
   aboutButtonText: {
     fontSize: 18,
     fontFamily: 'Gill Sans',

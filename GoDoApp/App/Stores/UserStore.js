@@ -32,6 +32,14 @@ var store = createStore({
         _user = Immutable.Map();
         store.emitChange(action);
         break;
+      case UserConstants.TIME_SCREEN:
+        _user.screen = 'goToTime';
+        store.emitChange(action);
+        break;
+      case UserConstants.MONEY_SCREEN:
+        _user.screen = 'goToMoney';
+        store.emitChange(action);
+        break;
     }
 
     return true;

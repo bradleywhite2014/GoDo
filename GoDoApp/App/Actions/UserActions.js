@@ -18,8 +18,23 @@ module.exports = {
 
   signOut() {
     dispatcher.handleViewAction({
-      actionType: UserConstants.SIGN_OUT,
+      actionType: UserConstants.SIGN_OUT
     });
   },
+  loadTimeScreen() {
+    dispatcher.handleViewAction({
+      actionType: UserConstants.TIME_SCREEN
+    });
+  },
+  loadHomeScreen() {
+    dispatcher.handleViewAction({
+      actionType: UserConstants.HOME_SCREEN
+    });
+  },
+  loadMoneyScreen() {
+    dispatcher.handleViewAction({
+      actionType: UserConstants.MONEY_SCREEN
+    });
+  }
 
 }

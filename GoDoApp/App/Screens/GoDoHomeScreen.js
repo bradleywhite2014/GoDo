@@ -24,19 +24,21 @@ var GoDoHomeScreen = React.createClass({
   mixins: [UserStoreSync, Modal.Mixin],
 
   timeHome() {
-    this.props.navigator.replace({id: 'time-home'});
+    UserActions.loadTimeScreen();
   },
   moneyHome() {
-    this.props.navigator.replace({id: 'money-home'});
+    UserActions.loadMoneyScreen();
   },
 
-  // afterUpdateUserFromStore() {
-  //   var user = UserStore.getState();
-  //
-  //   if (user.get('email')) {
-  //     this.props.navigator.replace({id: 'user-info'});
-  //   }
-  // },
+  afterUpdateUserFromStore() {
+    var user = UserStore.getState();
+
+    if (user.screen === 'goToTime') {
+      this.props.navigator.replace({id: 'time-home'});
+    }else if(user.screen === 'goToMoney'){
+      this.props.navigator.replace({id: 'money-home'});
+    }
+  },
 
   showModalTransition(transition) {
     transition('opacity', {duration: 200, begin: 0, end: 1});
